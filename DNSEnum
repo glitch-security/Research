@@ -1,0 +1,33 @@
+  DNS Enumeration
+  
+  # host website.com
+    Gives ip that the above host resolves to!
+    
+  # host -t ns website.com
+    NameServer
+  
+  # host -t mx website.com
+    MailServer
+  
+  # nslookup website.com
+  
+  DIG
+  
+  #dig website.com
+  
+  #dig website.com -t mx / -t ns  (CNAME / AAAA)
+  
+  #dig website.com AAAA
+    gives ipv6 addr
+    
+  DNS Zone Transffer
+  
+  # host -t ns zonetransfer.me
+  
+  # host -l zonetransfer.me [nameserver]
+    
+  # dig axfr zonetransfer.me @nameserver
+  
+  # dnsrecon -d zonetransfer.me -t axfr
+  
+  
