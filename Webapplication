@@ -1,0 +1,228 @@
+Vulns Finding Methodology
+
+Mapping Tips
+  Google
+  Smart Directory Bruteforcing
+    seclists
+    SVN Digger
+Platform Identification
+  Wapplyzer
+  Builtwith
+  retirejs
+  check CVEs
+
+  Retire.js
+    It will profile all of the srver side javascript libraries and tell you if they are out of date as well as give list of all the vulnerabilities before that patch.
+    
+  Auxillary
+    WPScan - wordpress sites
+    Joomscan - Joomla sites
+    Droopscan - Drupal sites
+    
+  Directory Bruteforcing Workflow
+    After bruteforcing look for other status codes indicating you are denied or require auth then append list of these to test for misconfigured access control.
+    
+  Mapping / Vuln Discovery using OSINT
+  
+    xssed.com 
+    reddit XSS
+    Punkspider
+    xss.cx
+    xssposed.org
+    Twitter
+    
+    Issues might be already reported but use the flow area and injection type to try for other areas or filter bypass
+   
+  Auth
+    Auth realted vulns
+    
+    User / Pass discrepancy flaw
+    registration page harvesting
+    Login page harvesting
+    No account lockout
+    Weak Password Policy
+    Password not required for account updates
+    Password reset tokens (no expiry or reuse)
+    
+  Session
+    
+    Failure to invalidate old cookies
+    No new cookies on login / logout / timeout
+    Never ending cookie length
+    Multiple sessions allowed
+    Easily Reversible Cookie
+    
+  Tactical Fuzzing
+    XSS
+    Rsnake XSS cheatsheet
+    Ashar javed XSS Research
+    Mathias Karlson XSS paylaods
+    "onclIck=alerT(1)//<button' onclick=alert(1) //>alert(1)//
+    
+    Other XSS observations
+    
+    input vectors
+    customizable themes and profiles via CSs
+    Event or meeting names
+    URI based
+    Imported from a third party (ex. Facebook / Gmail Integration)
+    JSON Post Values (check returning content type)
+    File Upload Names
+    Uploaded Files 
+    Custom Error Pages
+    Fake Params (ex- ?real_param=1&foobar'+alert(/XSS/)+' )
+    Login and Forgot Password forms
+    
+   SWF Parameter XSS
+    Common Params - 
+      onload, allowedDomain, moviePlayer, xmlPath, eventhandler, callback - find more on OWASP page.
+      
+      Common injection Strings
+      \%22})))}catch(e){alert(document.domain);}//
+      "]);}catch(e){}if(!self.a)self.a=!alert(document.doamain);//
+      "a")(({type:"ready"}));}catch(e){alert(1)}//
+     
+      Tool - Cure53/flashbang
+      
+  SQL Injection
+    Does the page look like it might call on stored data.
+    
+    use sqli polyglots like 
+    sleep(1)/*' or SLEEP(1) or '"SLEEP(1) or "*/
+    above payload wors in single quote context, works in double quote context etc.
+    
+  SQL Injection Observation
+    Blind is predominant, Error based is highly unlikely
+    '%2Bbenchmark(3200, SHA(1))%2B''+BENCHMARK(40000000, SHA1(1337))+'
+      Tool - sqlmap
+      
+  Common params
+    ID
+    Currency Values
+    Item Number Values
+    Sorting parameters (i.e order , sort etc)
+    JSON and XML values
+    Cookie Values
+    Custom Headers (look for possible integrations with CDNs or WAFs)
+    REST Based Services
+    
+    Best Resources / cheatsheets
+    MYSQL - Pentestmonkey's mysql inj cheatsheet. Reiner's mysqli filter evasion cheatsheet
+    MSSQL - EvilSQL's error / union / blind MSSQL cheatsheet. PentestMonkey's MSSQL SQLI cheatsheet
+    ORACLE - Pentestmonkey's Oracle SQLi Cheatsheet
+    POSTGRESQL - Pentestmonkey
+    
+  Local File Inclusion
+    Core - idea : Does it interact with the server file system?
+    
+    Common Injection Points
+    file
+    location
+    locale
+    path
+    display
+    load
+    read
+    retrieve etc
+    
+  Malicious File Upload
+    A file upload function needs a lot of protection to be adequately secure.
+    
+    Attacks:
+      > Upload unexpected file format to acheive code exec.
+      > Execute XSS via same type of files. File names also.
+      > Attack the parser to DOS the site or XSS via storing payloads in metadata or file header.
+      > Bypass Security Zones and store malware on target site via file polyglots.
+      
+  Redirects
+  
+    Look for any param with another web address in it. Same params from LFI can be present here too.
+    Common params
+    dest  URL continue  uri window  next  redirect
+    
+    Common blacklist bypasses:
+      escape "/" with "'\/'" or "//" with "\/\/"
+      Try single "/" instead of "//"
+      remove http ie "continue = //google.com"
+      "/\/\", "//", "/%09/"
+      Encode slashes
+      "./" change to "..//"
+      "../" change to "....//"
+      "/" change to "//"
+      
+   Remote File Inclusions and Redirects
+    RFI common parameters or injection points
+    file  folder  document  path  root  style pg  template  php_path  pdf doc etc
+    
+  CSRF
+    Use burp's CSRF POC creator- fast and ez
+    Also check for Access control of CSRF tokens.
+    Bypass also.
+    Common Bypasses : 
+      Remove CSRF token from request
+      remove CSRF token parameter value
+      add bad control chars to CSRF parameter value
+      Use a second identical CSRF parameter
+      Change POST to GET
+      
+      CSRF common critical functions
+      Add / Upload File
+      Email Change
+      Password Change
+      Transfer money / credits
+      Profile Edit
+      etc
+      
+   Privilege Transport Logic
+   
+    Testing User Privileges
+      Check if other users are able to use functions called by or only allowed for admins.
+      
+    Privilege
+    1. Find site functionality restricted to certain user types
+    2. Try accessing them with other user roles.
+    3. try to directly browse to views with sensitive information as lesser privilege user.
+      
+  Inecure Direct Object References
+ 
+  Find any and all UIDs
+  increment / decrement
+  negative values
+  Attempt to perform sensitive functions
+    changing password with substituted UID
+    forgot password
+    admin only function
+  
+  Common Functions, Views or files
+  
+  everything from the CSRF Table, trying cross account attacks
+  substitute: UIDS, user hashes, or emails
+  Images that are non public
+  recipts
+  Private files (PDFs , text files etc)
+  Shipping info / Purchase orders
+  Sending / Deleting messages
+  
+Logic Flaws
+  
+  Substituting hashed parameters
+  step manipulation
+  use negatives in quantities
+  Authentication Bypass
+  Application level DOS
+  Timing Attacks
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
