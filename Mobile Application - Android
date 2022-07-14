@@ -4,6 +4,7 @@ Android Application Pentest
 
     a. Not protected Web View 
       1. Session Hijacking stealing authorization token
+      2. Misconfigurations
     b. External URL loading
         1. Access to JS Interfaces
         2. Attacks on internal handlers
@@ -32,8 +33,11 @@ Android Application Pentest
     c. Unnecessary / Dangerous permissions
     d. Exported Activities
     e. Exported Intents
-7.
-8.
+    f. Broadcast Receivers
+    
+7. Exported Services
+
+8. 
 9.
 10.
 
