@@ -1,0 +1,30 @@
+Android Application Pentest
+
+1. WebView Vulnerabilities 
+
+    a. Not protected Web View 
+      1. Session Hijacking stealing authorization token
+    b. External URL loading
+        1. Access to JS Interfaces
+        2. Attacks on internal handlers
+        3. Arbitrary file access
+        4. Insecure implementation of webresourceResponse
+        5. Exploitation of Content Providers
+        6. Access to cookies
+    c. XSS
+    d. JS Code Injections
+    e. WebView Misconfiguration
+2. Vulnerabilities regarding older versions of android support
+
+3.
+4.
+5.
+6.
+7.
+8.
+9.
+10.
+
+
+
+
