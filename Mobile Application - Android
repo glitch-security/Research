@@ -16,10 +16,22 @@ Android Application Pentest
     e. WebView Misconfiguration
 2. Vulnerabilities regarding older versions of android support
 
-3.
-4.
-5.
-6.
+3. Frida
+
+    a. SSL Pinning Bypass
+    b. Root Check Bypass
+    
+4. 
+
+5. 
+
+6. Manifest.xml
+    
+    a. Allow Backup Flag
+    b. Debug Flag True
+    c. Unnecessary / Dangerous permissions
+    d. Exported Activities
+    e. Exported Intents
 7.
 8.
 9.
