@@ -22,9 +22,11 @@ Android Application Pentest
     a. SSL Pinning Bypass
     b. Root Check Bypass
     
-4. 
+4. Network Vulnerabilities
+    a. Insecure Transmission of Sensitive Data
+    b. 
 
-5. 
+5. Info leakage through Logs
 
 6. Manifest.xml
     
@@ -37,8 +39,10 @@ Android Application Pentest
     
 7. Exported Services
 
-8. 
-9.
+8. Insecure Storage
+
+9. 
+
 10.
 
 
