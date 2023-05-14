@@ -1,0 +1,8 @@
+1. grep command to search content and show file names which contain it
+  grep -rl '<insert tableName="API_KEYS">' ./
+  
+2. grep command for recursive search
+  grep -rn 'keyword' ./
+  
+3. Rsync command to sync folder
+  rsync -az username@machine:/home/user/folder/ localfolder/
