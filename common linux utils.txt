@@ -6,3 +6,8 @@
   
 3. Rsync command to sync folder
   rsync -az username@machine:/home/user/folder/ localfolder/
+
+4. Cut command
+  cut -d"/" -f2
+  -d = delimeter
+  -f2 = select second field to display in output
