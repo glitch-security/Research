@@ -11,3 +11,8 @@
   cut -d"/" -f2
   -d = delimeter
   -f2 = select second field to display in output
+
+5. grep command to search for pattern and show results of the file names who contain the pattern
+  grep -rnw . -e "$_user_location.*=.*'public';"
+
+6. 
