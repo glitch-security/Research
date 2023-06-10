@@ -15,4 +15,14 @@
 5. grep command to search for pattern and show results of the file names who contain the pattern
   grep -rnw . -e "^.*$_user_location.*=.*'public';"
 
-6. 
+6. grep command to search keyword1 and the search keyword2 from resulting files from search in 1st query of keyword1
+  grep -rlZ "first string" . | xargs -0 grep -rl "second string"
+  First grep will return the files containing first string.
+
+  Second grep will do the same for second string, but over the results from the first grep.
+
+  The -Z argument to grep and the -0 argument to xargs work together to enable support for filenames that include spaces.
+  
+7. grep command to show next n number of lines along with found output
+  grep -rnw "keyword" -A 2
+  here instead of 2 put the number of lines you would like to see
