@@ -26,3 +26,6 @@
 7. grep command to show next n number of lines along with found output
   grep -rnw "keyword" -A 2
   here instead of 2 put the number of lines you would like to see
+
+8. grep command to extract urls
+  cat urls.html | grep -Eo "(http|https)://[a-zA-Z0-9./?=_%:-]*" | sort -u
