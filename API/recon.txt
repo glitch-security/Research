@@ -1,2 +1,7 @@
 API documentation recon
 https://app.swaggerhub.com/search
+
+Extract URL Endpoints with grep 
+
+grep -o '"\/[^"]*"' E-Services\ API.json | grep -v "{"
+
