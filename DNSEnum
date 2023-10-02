@@ -12,7 +12,8 @@
   # nslookup website.com
   
   DIG
-  
+  #dig any domain.com @DNS-IP
+
   #dig website.com
   
   #dig website.com -t mx / -t ns  (CNAME / AAAA)
