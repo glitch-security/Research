@@ -10,3 +10,7 @@ Find Main activity of the package
 
   1. adb shell dumpsys package <PACKAGE_NAME> | grep -A 1 MAIN
 
+Executing frida scripts
+
+  frida.exe -U -l D:\tools\fridascripts\root2.js -f com.example.subscriber.uat -l D:\tools\fridascripts\ssl.js
+
