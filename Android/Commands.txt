@@ -1,0 +1,12 @@
+Start an application using activity manager (am)
+
+  1. adb shell am start -n <PACKAGE_NAME>/<ACTIVITY_NAME>
+
+List Installed Packages
+
+  1. adb shell pm list packages
+
+Find Main activity of the package
+
+  1. adb shell dumpsys package <PACKAGE_NAME> | grep -A 1 MAIN
+
