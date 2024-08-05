@@ -14,3 +14,8 @@ Executing frida scripts
 
   frida.exe -U -l D:\tools\fridascripts\root2.js -f com.example.subscriber.uat -l D:\tools\fridascripts\ssl.js
 
+Copy files from pc to android device
+
+  adb push <local_file> <remote_location>
+
+
