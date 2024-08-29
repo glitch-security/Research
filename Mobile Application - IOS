@@ -14,3 +14,7 @@ Use old iphone OS - Pa1lrain exploit
 
 6. Start frida server in iphone for remote connections using the following command after ssh -  ./frida-server -l 0.0.0.0 & (to start it on all interface)
 
+7. connecting frida to remote device - frida-ps.exe -H 192.168.1.17 -a
+
+8. connecting objection to remote device -  objection.exe -N -h 192.168.1.17 -p 27042 -g com.appname explore
+
