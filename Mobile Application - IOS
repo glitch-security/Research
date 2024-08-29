@@ -1,0 +1,14 @@
+Jailbreak
+
+Use old iphone OS - Pa1lrain exploit
+
+1. Make sure to use USB A to Lightning cable - not type c to lightning
+
+2. Use correct USB Port on PC - if not working with one port - try another.
+
+3. When exploit complete, run exploit again with Create FAKEFS option to create fakefs on iphone.
+
+4. Root password default - alpine
+
+5. Root user default - mobile (not root!)
+
