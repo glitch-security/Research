@@ -12,3 +12,5 @@ Use old iphone OS - Pa1lrain exploit
 
 5. Root user default - mobile (not root!)
 
+6. Start frida server in iphone for remote connections using the following command after ssh -  ./frida-server -l 0.0.0.0 & (to start it on all interface)
+
