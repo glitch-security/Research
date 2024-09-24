@@ -29,3 +29,14 @@
 
 8. grep command to extract urls
   cat urls.html | grep -Eo "(http|https)://[a-zA-Z0-9./?=_%:-]*" | sort -u
+
+9. AWK command to get field (-F is delimeter)
+  awk -F',' '{print $1}' filename
+
+10. Grep command to exclude lines that contain specific keyword (-v option used which inverts match)
+  grep -v "keyword"
+
+
+
+
+
