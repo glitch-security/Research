@@ -1,0 +1,6 @@
+Notes for rooting Samsung phones
+
+1. Download the firmware from - https://samfw.com/
+2. For CSC code - refer the - Software Information -> Service provider software version.
+3. If the phone does not show OEM Unlock option after the unlocking of the bootloader in Developer options has benn performed, just set a manual date to 2-3 weeks ahead from today date and it should show u after a reboot. 
+4. If the device not able to boot after flashing the modified firmware - just factory reset from the bootloader settings. it should work after the phone boots back up. Just install the magisk application and it should confirm that the device is rooted.
